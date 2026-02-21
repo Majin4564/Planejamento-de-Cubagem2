@@ -1,0 +1,83 @@
+body {
+  display: flex;
+
+  font-family: Arial, sans-serif;
+  background: #f3f3f3;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  margin-bottom: 15px;
+}
+
+.content {
+  margin-left: 110px;
+  transition: margin-left 0.5s;
+  width: 100%;
+}
+
+/* DASHBOARD */
+.dashboard {
+  display: flex;
+  gap: 98px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: white;
+  padding: 10px 18px;
+  border-radius: 10px;
+  min-width: 110px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card span {
+  display: block;
+  margin-top: 5px;
+  color: orange;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* GRÁFICO MENOR */
+.grafico-box {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  height: 260px; /* 👈 gráfico reduzido */
+  width: 950px;
+}
+
+/* DIAS */
+.dias {
+  display: flex;
+  gap: 40px;
+}
+
+.dia {
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  width: 160px;
+  min-height: 200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dia h3 {
+  text-align: center;
+}
+
+/* FILIAIS */
+.filial {
+  background: orange;
+  padding: 7px;
+  border-radius: 8px;
+  margin: 6px 0;
+  text-align: center;
+  cursor: grab;
+  font-weight: bold;
+}

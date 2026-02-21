@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Planejamento de Cubagem</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="./filiais2.css">
+  <link rel="stylesheet" href="./somacubagem/cub.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+</head>
+
+
+<body>
+<nav id="sidebar">
+  <div id="sidebar_content">
+<div id="user">
+  <img  src="./OIP.webp" id="user_avatar" alt="Avatar">
+  <p id="user_infos">
+    <span class="item-descripition">
+      Armazém Paraíba
+    </span>
+    <span class="item-descripition">
+       Sucesso em qualquer lugar!!
+    </span>
+  </p>
+</div>
+<ul id="side_items">
+    <li class="side-item ">
+      <a href="../index.html">
+        <i class="fa-solid fa-house"></i>
+        <span class="item-descripition">
+          Home
+        </span>
+      </a>
+    </li> 
+
+      <li class="side-item active">
+      <a href="./new/filiaisthe.html">
+        <i class="fa-regular fa-map"></i>
+        <span class="item-descripition">
+          Todas as filiais
+        </span>
+      </a>
+    </li> 
+</ul>
+</div>
+
+<button id="open_btn">
+  <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
+
+</button>
+
+
+
+</nav>
+
+
+<div class="content">
+<h1>Planejamento de Cubagem</h1>
+
+<!-- DASHBOARD -->
+<div class="dashboard">
+  <div class="card" data-dia="SEG"><strong>SEG</strong><span>0 m³</span></div>
+  <div class="card" data-dia="TER"><strong>TER</strong><span>0 m³</span></div>
+  <div class="card" data-dia="QUA"><strong>QUA</strong><span>0 m³</span></div>
+  <div class="card" data-dia="QUI"><strong>QUI</strong><span>0 m³</span></div>
+  <div class="card" data-dia="SEX"><strong>SEX</strong><span>0 m³</span></div>
+</div>
+
+<!-- GRÁFICO -->
+<div class="grafico-box">
+  <canvas id="grafico"></canvas>
+</div>
+
+<!-- DIAS -->
+<div class="dias">
+  <div class="dia" data-dia="SEG">
+    <h3>SEG</h3>
+    <div class="filial" draggable="true" data-valor="66.529">BDF</div>
+    <div class="filial" draggable="true" data-valor="46.352">LED</div>
+    <div class="filial" draggable="true" data-valor="69.299">CDE</div>
+    <div class="filial" draggable="true" data-valor="74.127">PDC</div>
+    <div class="filial" draggable="true" data-valor="64.840">PID</div><hr>
+    <div class="filial" draggable="true" data-valor="69.78"style="background-color:#EB2800" >SRD</div>
+    <div class="filial" draggable="true" data-valor="20.875"style="background-color:#EB2800">DSJ</div>
+    <div class="filial" draggable="true" data-valor="21.352"style="background-color:#A10F09">CST</div>
+    <div class="filial" draggable="true" data-valor="15.388"style="background-color:#A10F09">SMT</div>
+    <div class="filial" draggable="true" data-valor="55.861"style="background-color:#EA9D4E">CAD</div>
+    <div class="filial" draggable="true" data-valor="22.563"style="background-color:#B5EA5E">ALS</div>
+    <div class="filial" draggable="true" data-valor="20.145"style="background-color:#B5EA5E">ALG</div>
+    <div class="filial" draggable="true" data-valor="13.529"style="background-color:#B5EA5E">BNT</div>
+    <div class="filial" draggable="true" data-valor="40.202"style="background-color:#5B762F">DBC</div>
+    <div class="filial" draggable="true" data-valor="62.080"style="background-color:#5B762F">DPU</div><hr>
+     <div class="filial" draggable="true" data-valor="71.355">TES</div>
+     <div class="filial" draggable="true" data-valor="71.355">TEU</div>
+     <div class="filial" draggable="true" data-valor="71.355">TMA</div>
+     <div class="filial" draggable="true" data-valor="71.355">TEZ</div>
+     <div class="filial" draggable="true" data-valor="71.355">TIM</div>
+     <div class="filial" draggable="true" data-valor="71.355">TEC</div>
+     <div class="filial" draggable="true" data-valor="71.355">TED</div>
+     <div class="filial" draggable="true" data-valor="71.355">TPP</div>
+  </div>
+
+  <div class="dia" data-dia="TER">
+    <h3>TER</h3>
+    <div class="filial" draggable="true" data-valor="66.147">DPC</div>
+    <div class="filial" draggable="true" data-valor="70.187">FLD</div>
+    <div class="filial" draggable="true" data-valor="75.587">PAR</div>
+    <div class="filial" draggable="true" data-valor="31.521">TUT</div> <!---dados na planilha TUD-->
+    <div class="filial" draggable="true" data-valor="51.136">DBH</div>
+    <div class="filial" draggable="true" data-valor="21.158">TIA</div>
+    <div class="filial" draggable="true" data-valor="9.788">SBT</div>
+    <div class="filial" draggable="true" data-valor="10.833"style="background-color:#67be9b">BDR</div>
+    <div class="filial" draggable="true" data-valor="9.611"style="background-color:#67be9b">PFP</div>
+    <div class="filial" draggable="true" data-valor="7.805"style="background-color:#67be9b">PRP</div>
+    <div class="filial" draggable="true" data-valor="4.395"style="background-color:#67be9b">FRL</div>
+    <div class="filial" draggable="true" data-valor="11.737"style="background-color:#67be9b">EVL</div><hr>
+    <div class="filial" draggable="true" data-valor="30.931"style="background-color:#487d76">VAL</div>
+    <div class="filial" draggable="true" data-valor="7.851"style="background-color:#487d76">PMT</div>
+    <div class="filial" draggable="true" data-valor="7.74"style="background-color:#487d76">ARO</div>
+    <div class="filial" draggable="true" data-valor="14.134"style="background-color:#487d76">INH</div>
+    <div class="filial" draggable="true" data-valor="22.182"style="background-color:#244242">DLB</div>
+    <div class="filial" draggable="true" data-valor="11.36"style="background-color:#244242">MGL</div>
+    <div class="filial" draggable="true" data-valor="13.607"style="background-color:#73bc91">MTS</div>
+    <div class="filial" draggable="true" data-valor="10.901"style="background-color:#73bc91">PRN</div>
+    <div class="filial" draggable="true" data-valor="29.984"style="background-color:#f18809">CNE</div><hr>
+    <div class="filial" draggable="true" data-valor="4.54">TES</div>
+    <div class="filial" draggable="true" data-valor="4.54">TPI</div>
+    <div class="filial" draggable="true" data-valor="4.54">TEU</div>
+    <div class="filial" draggable="true" data-valor="4.54">TMA</div>
+    <div class="filial" draggable="true" data-valor="4.54">TMO</div>
+    <div class="filial" draggable="true" data-valor="4.54">TSJ</div>
+  </div>
+
+  <div class="dia" data-dia="QUA">
+    <h3>QUA</h3>
+    <div class="filial" draggable="true" data-valor="73.159">IDC</div>
+    <div class="filial" draggable="true" data-valor="61.287">DAG</div>
+    <div class="filial" draggable="true" data-valor="61.46">CDF</div>
+    <div class="filial" draggable="true" data-valor="61.85">CDP</div>
+    <div class="filial" draggable="true" data-valor="45.95"style="background-color:#de3c2f">ABR</div>   <!---dados na planilha como DAB-->
+    <div class="filial" draggable="true" data-valor="12.30"style="background-color:#de3c2f">PAL</div>
+    <div class="filial" draggable="true" data-valor="10.07"style="background-color:#de3c2f">ANG</div>
+    <div class="filial" draggable="true" data-valor="9.934"style="background-color:#de3c2f">AMA</div>
+    <div class="filial" draggable="true" data-valor="7.651"style="background-color:#de3c2f">SFR</div>
+    <div class="filial" draggable="true" data-valor="13.42"style="background-color:#dee7e7">REG</div>
+    <div class="filial" draggable="true" data-valor="69.936"style="background-color:#dee7e7">OEI</div>
+    <div class="filial" draggable="true" data-valor="55.005"style="background-color:#d4c7bf">DCO</div>
+    <div class="filial" draggable="true" data-valor="10.913"style="background-color:#d4c7bf">PBO</div>
+    <div class="filial" draggable="true" data-valor="21.61"style="background-color:#d4c7bf">SPA</div>
+    <div class="filial" draggable="true" data-valor="21.71"style="background-color:#c6d6d6">JFT</div>
+    <div class="filial" draggable="true" data-valor="21.67"style="background-color:#c6d6d6">UNI</div><hr>
+    <div class="filial" draggable="true" data-valor="4.54">TES</div>
+    <div class="filial" draggable="true" data-valor="4.54">TEU</div>
+    <div class="filial" draggable="true" data-valor="4.54">TMA</div>
+    <div class="filial" draggable="true" data-valor="4.54">TEZ</div>
+    <div class="filial" draggable="true" data-valor="4.54">TIM</div>
+    <div class="filial" draggable="true" data-valor="4.54">TEC</div>
+    <div class="filial" draggable="true" data-valor="4.54">TED</div>
+    <div class="filial" draggable="true" data-valor="4.54">TPP</div>
+  </div>
+
+  <div class="dia" data-dia="QUI">
+    <h3>QUI</h3>
+    <div class="filial" draggable="true" data-valor="71.74">DPI</div>
+    <div class="filial" draggable="true" data-valor="34.79">CUM</div>
+    <div class="filial" draggable="true" data-valor="57.636">CHD</div>
+    <div class="filial" draggable="true" data-valor="20.150">CTA</div>
+    <div class="filial" draggable="true" data-valor="22.638">VAG</div>    <!--dados na planilha como DVG-->
+    <div class="filial" draggable="true" data-valor="22.638">ITA</div>
+    <div class="filial" draggable="true" data-valor="57.502">ROS</div>
+    <div class="filial" draggable="true" data-valor="68.591">PDF</div>
+    <div class="filial" draggable="true" data-valor="70.483">ARD</div>
+    <div class="filial" draggable="true" data-valor="22.091">CCT</div>
+    <div class="filial" draggable="true" data-valor="59.964">DBJ</div>
+    <div class="filial" draggable="true" data-valor="34.602">DCB</div>
+    <div class="filial" draggable="true" data-valor="5.000">EMR</div>
+    <div class="filial" draggable="true" data-valor="5.376">COG</div>
+    <div class="filial" draggable="true" data-valor="22.563">ALS</div><hr>
+    <div class="filial" draggable="true" data-valor="4.54">TES</div>
+    <div class="filial" draggable="true" data-valor="4.54">TPI</div>
+    <div class="filial" draggable="true" data-valor="4.54">TEU</div>
+    <div class="filial" draggable="true" data-valor="4.54">TMA</div>
+    <div class="filial" draggable="true" data-valor="4.54">TMO</div>
+    <div class="filial" draggable="true" data-valor="4.54">TSJ</div>
+  </div>
+
+  <div class="dia" data-dia="SEX">
+    <h3>SEX</h3>
+    <div class="filial" draggable="true" data-valor="66.325">BAC</div> <!--dados na planilha como BCD-->
+    <div class="filial" draggable="true" data-valor="67.891">DSI</div>
+    <div class="filial" draggable="true" data-valor="43.469">BCU</div>
+    <div class="filial" draggable="true" data-valor="59.081">DZE</div>
+    <div class="filial" draggable="true" data-valor="38.801">DCT</div>
+    <div class="filial" draggable="true" data-valor="22.736">SLP</div>
+    <div class="filial" draggable="true" data-valor="7.778">AMP</div>
+    <div class="filial" draggable="true" data-valor="14.34">CME</div>
+    <div class="filial" draggable="true" data-valor="8.713">GDV</div>
+    <div class="filial" draggable="true" data-valor="10.918">LDO</div>
+    <div class="filial" draggable="true" data-valor="47.143">URU</div>
+    <div class="filial" draggable="true" data-valor="5.576">RGO</div>
+    <div class="filial" draggable="true" data-valor="15.04">BGR</div>
+    <div class="filial" draggable="true" data-valor="30.545">BAR</div>
+    <div class="filial" draggable="true" data-valor="9.449">NSR</div>
+    <div class="filial" draggable="true" data-valor="28.846">LUZ</div>
+    <div class="filial" draggable="true" data-valor="13.785">MIA</div>
+    <div class="filial" draggable="true" data-valor="8.7109">PRT</div>
+    <div class="filial" draggable="true" data-valor="13.43">MIO</div>
+    <div class="filial" draggable="true" data-valor="10.09">BAT</div>
+    <div class="filial" draggable="true" data-valor="26.193">ESP</div>
+    <div class="filial" draggable="true" data-valor="10.488">JPR</div>
+    <div class="filial" draggable="true" data-valor="21.71">JFT</div>
+    <div class="filial" draggable="true" data-valor="21.67">UNI</div><hr>
+    <div class="filial" draggable="true" data-valor="4.54">TES</div>
+    <div class="filial" draggable="true" data-valor="4.54">TEU</div>
+    <div class="filial" draggable="true" data-valor="4.54">TMA</div>
+    <div class="filial" draggable="true" data-valor="4.54">TEZ</div>
+    <div class="filial" draggable="true" data-valor="4.54">TIM</div>
+    <div class="filial" draggable="true" data-valor="4.54">TEC</div>
+    <div class="filial" draggable="true" data-valor="4.54">TED</div>
+    <div class="filial" draggable="true" data-valor="4.54">TPP</div>
+  </div>
+</div>
+ <div class="planejamento">
+  <div class="header-drag">Planejamento de Carga</div>
+
+  <div id="areaCarga" class="area-carga">
+    <p>Arraste as filiais aqui</p>
+  </div>
+
+  <div class="resumo">
+    <p>Total: <strong id="totalCubagem">0 m³</strong></p>
+    <p>Caminhão ideal: <strong id="caminhaoIdeal">-</strong></p>
+  </div>
+</div>
+
+<div id="lixeira">🗑 Arraste aqui para remover</div>
+</div>
+<script src="../index.js"></script>
+<script src="./sidebar.js"></script>
+<script src="./somacubagem/cub.js"></script>
+
+</body>
+</html>
