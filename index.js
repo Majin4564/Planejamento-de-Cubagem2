@@ -17,7 +17,7 @@ const chart = new Chart(ctx, {
   },
   options: {
     responsive: true,
-    maintainAspectRatio: false, // 👈 necessário para controlar altura
+    maintainAspectRatio: false,
     plugins: {
       legend: { display: true },
       datalabels: {
@@ -46,41 +46,82 @@ const chart = new Chart(ctx, {
   plugins: [ChartDataLabels]
 });
 
-/* DRAG & DROP */
+
+/* =========================
+   DRAG & DROP
+========================= */
 document.querySelectorAll(".filial").forEach(f => {
   f.addEventListener("dragstart", () => dragged = f);
 });
 
 document.querySelectorAll(".dia").forEach(dia => {
   dia.addEventListener("dragover", e => e.preventDefault());
+
   dia.addEventListener("drop", () => {
-    if (dragged) {
-      dia.appendChild(dragged);
-      atualizarTotais();
+    if (!dragged) return;
+
+    const titulo = dia.querySelector("h3, h4, h2, .titulo");
+
+    if (titulo) {
+      titulo.insertAdjacentElement("afterend", dragged);
+    } else {
+      dia.prepend(dragged);
     }
+
+    atualizarTotais();
   });
 });
 
-/* ATUALIZA TOTAIS */
-function atualizarTotais() {
-  const totais = [0, 0, 0, 0, 0];
 
-  document.querySelectorAll(".dia").forEach((dia, index) => {
+/* =========================
+   ATUALIZA TOTAIS
+   REGRA FIXA: +2 DIAS
+========================= */
+function atualizarTotais() {
+
+  const totais = {
+    SEG: 0,
+    TER: 0,
+    QUA: 0,
+    QUI: 0,
+    SEX: 0
+  };
+
+  document.querySelectorAll(".dia").forEach((dia) => {
+
+    const diaVisual = dia.dataset.dia;
+    const indexVisual = dias.indexOf(diaVisual);
+
     dia.querySelectorAll(".filial").forEach(f => {
-      totais[index] += parseFloat(f.dataset.valor);
+
+      const valor = parseFloat(f.dataset.valor) || 0;
+
+      const destinoIndex = (indexVisual + 1) % dias.length;
+      const destinoDia = dias[destinoIndex];
+
+      totais[destinoDia] += valor;
+
     });
 
-    document
-      .querySelector(`.card[data-dia="${dias[index]}"] span`)
-      .textContent = totais[index].toLocaleString("pt-BR", {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      }) + " m³";
   });
 
-  chart.data.datasets[0].data = totais;
+  // Atualiza cards e gráfico
+  dias.forEach((diaNome, index) => {
+
+    const cardSpan = document.querySelector(`.card[data-dia="${diaNome}"] span`);
+
+    if (cardSpan) {
+      cardSpan.textContent =
+        totais[diaNome].toLocaleString("pt-BR", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        }) + " m³";
+    }
+
+    chart.data.datasets[0].data[index] = totais[diaNome];
+ });
+
   chart.update();
 }
-
 
 atualizarTotais();
