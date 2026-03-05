@@ -81,3 +81,27 @@ h1 {
   cursor: grab;
   font-weight: bold;
 }
+
+.tooltip-filial {
+  position: absolute;
+  background: #1e293b;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+.tooltip-filial strong{
+  font-size:13px;
+}
+
+.tooltip-filial.show{
+  opacity:1;
+  transform: translateY(0);
+}
